@@ -1,431 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Allocation | Capital Intelligence | April 6, 2025</title>
+<title>The Allocation | April 6, 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0f0e0d;
-    --paper: #f5f0e8;
-    --cream: #ede8dc;
-    --accent: #c84b2f;
-    --gold: #b5892a;
-    --slate: #3d3c3a;
-    --muted: #7a7570;
-    --border: #d0c8b8;
-    --era-blue: #1a2f4a;
-    --era-teal: #16a07e;
-    --highlight: #fff3cd;
-    --page-bg: #cdc5b4;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--page-bg); min-height: 100%; }
-  body {
-    background: transparent;
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
-    line-height: 1.75;
-    width: 100%;
-    padding: 40px 20px 80px;
-  }
-  .page-wrapper {
-    max-width: 980px;
-    margin: 0 auto;
-    background: var(--paper);
-    padding: 56px 72px 72px;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.16);
-  }
-  .masthead {
-    text-align: center;
-    border-top: 3px double var(--ink);
-    border-bottom: 3px double var(--ink);
-    padding: 22px 0 18px;
-    margin-bottom: 10px;
-  }
-  .masthead-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-  .masthead-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 7vw, 80px);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .masthead-tagline {
-    font-size: 12px;
-    color: var(--muted);
-    font-style: italic;
-    margin-top: 6px;
-    font-family: 'Playfair Display', serif;
-  }
-  .issue-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-    padding: 10px 0;
-    margin-bottom: 44px;
-  }
-  .expert-quote-block {
-    border-left: 4px solid var(--accent);
-    background: var(--cream);
-    padding: 26px 32px;
-    margin: 0 0 40px;
-  }
-  .expert-quote-block::before {
-    content: "Executive Perspective";
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--accent);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 14px;
-  }
-  .expert-quote-block p {
-    font-size: 16.5px;
-    line-height: 1.72;
-    color: var(--slate);
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-  }
-  .expert-quote-block .expert-sig {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 14px;
-    font-style: normal;
-    letter-spacing: 0.05em;
-  }
-  h1.article-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 48px);
-    font-weight: 900;
-    line-height: 1.12;
-    letter-spacing: -0.025em;
-    margin-bottom: 10px;
-    color: var(--ink);
-  }
-  .article-dek {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-style: italic;
-    color: var(--muted);
-    margin-bottom: 28px;
-    line-height: 1.55;
-  }
-  .byline {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-transform: uppercase;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 10px 0;
-    margin-bottom: 34px;
-  }
-  p { margin-bottom: 20px; color: var(--slate); }
-  p strong { color: var(--ink); font-weight: 500; }
-  h2.section-head {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 48px 0 18px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--ink);
-  }
-  h3.sub-head {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 32px 0 10px;
-  }
-  .pull-quote {
-    text-align: center;
-    border-top: 2px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
-    padding: 30px 24px;
-    margin: 44px 0;
-  }
-  .pull-quote p {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 3vw, 27px);
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.38;
-    color: var(--ink);
-    margin: 0;
-  }
-  .era-hero {
-    background: var(--era-blue);
-    border-radius: 4px;
-    padding: 40px;
-    margin: 44px 0;
-    color: white;
-  }
-  .era-hero h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-  .era-hero .era-url {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--era-teal);
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .era-hero p { color: rgba(255,255,255,0.82); margin-bottom: 12px; font-size: 16px; }
-  .era-products { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
-  .era-pill {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 2px;
-    padding: 6px 18px;
-    font-size: 12px;
-    color: #fff;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .era-pill.active { background: var(--era-teal); border-color: var(--era-teal); }
-  .steps-container { margin: 36px 0; }
-  .step {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--border);
-  }
-  .step:last-child { border-bottom: none; }
-  .step-number {
-    flex-shrink: 0;
-    width: 42px; height: 42px;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    margin-top: 2px;
-  }
-  .step-body h4 { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 16px; color: var(--ink); margin-bottom: 7px; }
-  .step-body p { margin-bottom: 0; font-size: 15.5px; }
-  .step-body code {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    background: var(--cream);
-    padding: 2px 7px;
-    border-radius: 3px;
-    color: var(--accent);
-  }
-  .chat-window {
-    background: #1a1a2e;
-    border-radius: 6px;
-    padding: 28px;
-    margin: 36px 0;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-  }
-  .chat-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6c6c8a; margin-bottom: 20px; }
-  .chat-msg { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
-  .chat-avatar {
-    flex-shrink: 0;
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: bold;
-  }
-  .user-avatar { background: #2d4a9e; color: white; }
-  .ai-avatar { background: var(--era-teal); color: white; }
-  .chat-bubble {
-    background: #252540;
-    border-radius: 6px;
-    padding: 12px 16px;
-    color: #dcdcf0;
-    line-height: 1.6;
-    max-width: 88%;
-  }
-  .chat-bubble.user { background: #1e2d5e; color: #b8c8ff; }
-  .chat-highlight { color: var(--era-teal); }
-  .infobox {
-    border: 1px solid var(--gold);
-    background: var(--highlight);
-    border-radius: 4px;
-    padding: 22px 28px;
-    margin: 36px 0;
-  }
-  .infobox .infobox-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-  .infobox p { color: var(--slate); font-size: 15px; margin-bottom: 0; }
-  .compare-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 14.5px; }
-  .compare-table th {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 13px 18px;
-    text-align: left;
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .compare-table td {
-    padding: 13px 18px;
-    border-bottom: 1px solid var(--border);
-    color: var(--slate);
-    vertical-align: top;
-    line-height: 1.6;
-  }
-  .compare-table tr:nth-child(even) td { background: var(--cream); }
-  .compare-table .check { color: var(--era-teal); font-size: 15px; }
-  .compare-table .cross { color: #bbb; font-size: 15px; }
-  .scenario-block {
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--era-blue);
-    background: var(--cream);
-    border-radius: 4px;
-    padding: 30px 34px;
-    margin: 40px 0;
-  }
-  .scenario-block .scenario-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--era-blue);
-    margin-bottom: 14px;
-    display: block;
-  }
-  .scenario-block h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 14px;
-    line-height: 1.25;
-  }
-  .scenario-block p { font-size: 15.5px; color: var(--slate); }
-  .thesis-block {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 26px 32px;
-    margin: 36px 0;
-  }
-  .thesis-block h4 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
-  .thesis-block p { font-size: 15.5px; }
-  .security-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 28px 0;
-  }
-  .security-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 22px;
-  }
-  .security-card .sec-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--era-teal);
-    margin-bottom: 8px;
-    display: block;
-  }
-  .security-card p { font-size: 14.5px; color: var(--slate); margin-bottom: 0; line-height: 1.6; }
-  .security-card strong { color: var(--ink); }
-  .verdict {
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 4px;
-    padding: 36px 42px;
-    margin: 44px 0;
-  }
-  .verdict h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 18px; color: #fff; }
-  .verdict p { color: rgba(255,255,255,0.82); font-size: 16px; }
-  .verdict p strong { color: #fff; }
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
-  .stat-card {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 18px;
-    text-align: center;
-  }
-  .stat-card .stat-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; color: var(--ink); display: block; }
-  .stat-card .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 5px; display: block; line-height: 1.5; }
-  .footer { border-top: 3px double var(--ink); padding-top: 26px; margin-top: 64px; text-align: center; }
-  .footer p { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
-  .footer .footer-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--ink); margin-bottom: 8px; display: block; }
-  .divider { text-align: center; color: var(--muted); margin: 44px 0; font-size: 18px; letter-spacing: 0.5em; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  @media (max-width: 700px) {
-    .page-wrapper { padding: 32px 24px 48px; }
-    .stat-row { grid-template-columns: 1fr 1fr; }
-    .security-grid { grid-template-columns: 1fr; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div class="page-wrapper">
 
+<!-- MASTHEAD -->
 <header class="masthead">
   <p class="masthead-eyebrow">Institutional Intelligence for the Modern Finance Professional</p>
   <div class="masthead-title">The Allocation</div>
   <p class="masthead-tagline">Where capital markets meet machine intelligence - every Sunday</p>
 </header>
-
 <div class="issue-bar">
   <span>Vol. 1 &middot; Issue 3</span>
   <span>April 6, 2025</span>
   <span>Sunday Edition</span>
 </div>
 
+<!-- ARTICLE HEADER -->
 <h1 class="article-title">The Alpha Gap: How AI-Augmented Finance Professionals Are Rewriting the Rules of Capital Allocation</h1>
 <p class="article-dek">A rigorous examination of how artificial intelligence is restructuring the finance professional's operational bandwidth in 2025 - and a hands-on deep dive into Era, the platform quietly converging machine intelligence with live financial data.</p>
-<div class="byline">By The Allocation Desk &middot; Est. read time: 9 min &middot; Tools covered: ChatGPT, Claude, Era.app</div>
+<div class="byline">By The Allocation Desk &middot; Est. read time: 11 min &middot; Tools covered: ChatGPT, Claude, Era.app</div>
 
+<!-- EXPERT QUOTE -->
 <div class="expert-quote-block">
   <p>"In 2025, AI will drive efficiency improvements that empower finance professionals with the crucial insights they need far more rapidly - speeding up execution and driving greater business impact within their organizations. AI agents will increasingly take autonomous action to manage operational tasks, and with sustained adoption, this has the genuine potential to transform business intelligence and deliver measurable productivity gains across the finance function."</p>
   <div class="expert-sig">- Dan Durn, CFO and Executive Vice President of Finance, Technology Services and Operations, Adobe Inc. | Fortune, January 2025</div>
@@ -433,10 +37,9 @@
 
 <p>That assessment, from one of the most closely watched finance executives in the technology sector, reflects what is rapidly becoming consensus among senior financial leadership: AI is not a future capability - it is a present competitive variable. The firms and professionals who recognize this distinction early are already accruing a structural advantage, while those who remain in a prolonged evaluation posture risk falling materially behind on execution speed, analytical throughput, and resource efficiency.</p>
 
-<p>And yet, the reality across most finance teams is considerably more nuanced than the prevailing discourse suggests. The actual adoption pattern is not a wholesale transformation of the finance function. It is a deliberate, workflow-by-workflow integration - <strong>LLM tools such as ChatGPT and Claude deployed for document synthesis, variance commentary, and qualitative analysis</strong>; layered over existing infrastructure in Excel, Power BI, and proprietary ERP systems for quantitative reporting and forecasting. The aggregate effect is meaningful: reporting cycles compressed, analyst bandwidth redirected toward higher-order judgment, and documentation workflows substantially automated.</p>
+<p>The actual adoption pattern is not a wholesale transformation of the finance function. It is a deliberate, workflow-by-workflow integration - <strong>LLM tools such as ChatGPT and Claude deployed for document synthesis, variance commentary, and qualitative analysis</strong>; layered over existing infrastructure in Excel, Power BI, and proprietary ERP systems for quantitative reporting and forecasting. What has been conspicuously absent from this evolution - until recently - is a mechanism by which AI assistants can operate with direct, real-time access to an individual's actual financial data. That gap is precisely what <strong>Era</strong> is engineered to close.</p>
 
-<p>What has been conspicuously absent from this evolution - until recently - is a mechanism by which AI assistants can operate with direct, real-time access to an individual's actual financial data. That gap is precisely what <strong>Era</strong> is engineered to close.</p>
-
+<!-- ══════ VISUAL 1: KEY STATS ══════ -->
 <div class="stat-row">
   <div class="stat-card">
     <span class="stat-num">47%</span>
@@ -444,7 +47,7 @@
   </div>
   <div class="stat-card">
     <span class="stat-num">$340B</span>
-    <span class="stat-label">estimated annual value AI could generate in banking alone (McKinsey)</span>
+    <span class="stat-label">estimated annual value AI could generate in banking (McKinsey)</span>
   </div>
   <div class="stat-card">
     <span class="stat-num">80%</span>
@@ -452,35 +55,95 @@
   </div>
 </div>
 
+<!-- ══════ VISUAL 2: ANIMATED BAR CHART - AI Adoption by Task ══════ -->
+<div class="chart-wrap">
+  <div class="chart-title">Where Finance Teams Are Seeing the Biggest AI Productivity Gains</div>
+  <div class="chart-src">Source: Deloitte CFO Survey 2025 &middot; McKinsey State of AI in Finance 2025 &middot; Institute of Financial and Operations Leadership</div>
+
+  <div class="bar-row">
+    <div class="bar-label">Document Review &amp; Synthesis</div>
+    <div class="bar-track"><div class="bar-fill teal" data-width="82"><span>82%</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Reporting Automation</div>
+    <div class="bar-track"><div class="bar-fill blue" data-width="74"><span>74%</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Variance Analysis</div>
+    <div class="bar-track"><div class="bar-fill teal" data-width="68"><span>68%</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Forecasting Support</div>
+    <div class="bar-track"><div class="bar-fill gold" data-width="61"><span>61%</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">AR / AP Processing</div>
+    <div class="bar-track"><div class="bar-fill accent" data-width="55"><span>55%</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Portfolio Modelling</div>
+    <div class="bar-track"><div class="bar-fill slate" data-width="29"><span>29%</span></div></div>
+  </div>
+</div>
+
 <div class="pull-quote">
   <p>"The firms who recognize AI as a present competitive variable - not a future capability - are already accruing a structural advantage in execution speed and analytical throughput."</p>
 </div>
 
+<!-- ══════ ANJALI SCENARIO ══════ -->
 <h2 class="section-head">A Practitioner's Reality: The Anjali Scenario</h2>
-
 <div class="scenario-block">
   <span class="scenario-label">Practitioner Case Study</span>
   <h4>The Senior Analyst Who Manages Billions - But Not Her Own Portfolio</h4>
   <p>Anjali is a senior equity research analyst at a mid-size asset management firm with approximately $2.8 billion in assets under management. She covers the healthcare and pharmaceutical sectors, contributes to weekly investment committee deliberations, and routinely advises institutional clients on forward P/E adjustments, sector rotation rationale, and earnings deviation analysis.</p>
-
-  <p>Her operational week is structured as follows: approximately six hours of manual data aggregation across Bloomberg Terminal, SEC EDGAR filings, and FactSet to compile morning research notes. An additional four hours producing variance commentary for weekly portfolio attribution reports - a task involving considerable linguistic repetition and limited analytical novelty. Thursday afternoons are consumed by investment committee preparation, requiring the synthesis of earnings deviations, rebalancing signals, and macroeconomic inflection points into a coherent briefing narrative.</p>
-
   <p>She has already integrated ChatGPT for first-draft commentary and uses Claude to interrogate lengthy regulatory filings for material risk disclosures. These integrations have reclaimed roughly eight to ten hours per week - bandwidth now redirected toward higher-conviction research and client-facing advisory work.</p>
-
-  <p>The structural irony is not lost on her colleagues: Anjali advises institutional counterparts on portfolio construction and capital allocation strategy with considerable authority. Her own retirement portfolio has remained in its original default allocation since 2019 - not out of negligence, but because the cognitive bandwidth required to manage the assets of others leaves limited capacity to manage her own. Her emergency reserve sits in a low-yield savings account earning materially below prevailing money market rates. Her discretionary expenditure has drifted upward by an estimated 23% over eighteen months. She has not rebalanced following two consecutive quarters of material equity drawdown.</p>
-
-  <p>Era was introduced into her workflow not as a conventional personal finance application, but as a contextual data layer that her existing AI assistants could finally interrogate in real time. Within a single session, Claude - now connected to Era's Context MCP server - surfaced her complete account picture, flagged the yield differential on her savings allocation, identified three materially elevated recurring charges, and modeled a preliminary rebalancing scenario against her stated risk tolerance. No manual data entry. No platform context-switching. No CSV export and upload cycle.</p>
-
-  <p>That is the value proposition Era articulates: not a replacement for professional judgment, but an infrastructure layer that makes an analyst's most capable AI tools genuinely aware of their financial reality - and capable of acting on it.</p>
+  <p>The structural irony is not lost on her colleagues: Anjali advises institutional counterparts on portfolio construction and capital allocation strategy with considerable authority. Her own retirement portfolio has remained in its original default allocation since 2019. Her emergency reserve sits in a low-yield savings account earning materially below prevailing money market rates. She has not rebalanced following two consecutive quarters of material equity drawdown.</p>
+  <p>Era was introduced into her workflow as a contextual data layer that her existing AI assistants could finally interrogate in real time. Within a single session, Claude - connected to Era's Context MCP server - surfaced her complete account picture, flagged the yield differential on her savings allocation, identified three materially elevated recurring charges, and modeled a preliminary rebalancing scenario against her stated risk tolerance. No manual data entry. No platform context-switching. No CSV export cycle. That is the value proposition Era articulates.</p>
 </div>
 
-<h2 class="section-head">Enter Era: Connecting AI to Your Actual Financial Data</h2>
+<!-- ══════ VISUAL 3: DONUT CHART - Where Analysts Spend Time ══════ -->
+<div class="donut-section">
+  <div>
+    <div class="chart-title">Where Finance Analysts Spend Their Week</div>
+    <div class="chart-src" style="margin-bottom:0">Source: 2024 Deloitte Survey, n=73% of finance leaders</div>
+    <div style="margin-top:18px;" class="donut-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div><div class="legend-text">Repetitive reporting &amp; doc tasks</div><div class="legend-pct">38%</div></div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-teal)"></div><div class="legend-text">Data aggregation &amp; reconciliation</div><div class="legend-pct">24%</div></div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div><div class="legend-text">Variance commentary drafting</div><div class="legend-pct">18%</div></div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--era-blue)"></div><div class="legend-text">High-value analysis &amp; strategy</div><div class="legend-pct">20%</div></div>
+    </div>
+  </div>
+  <div class="donut-container">
+    <svg class="donut-svg" viewBox="0 0 120 120" width="200" height="200">
+      <!-- bg circle -->
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#e8e2d6" stroke-width="28"/>
+      <!-- Segment 1: accent 38% = 289/760 -->
+      <circle class="donut-circle" cx="60" cy="60" r="46" stroke="var(--accent)"
+        stroke-dasharray="0 289" stroke-dashoffset="0" id="seg1"/>
+      <!-- Segment 2: teal 24% -->
+      <circle class="donut-circle" cx="60" cy="60" r="46" stroke="var(--era-teal)"
+        stroke-dasharray="0 289" stroke-dashoffset="0" id="seg2"/>
+      <!-- Segment 3: gold 18% -->
+      <circle class="donut-circle" cx="60" cy="60" r="46" stroke="var(--gold)"
+        stroke-dasharray="0 289" stroke-dashoffset="0" id="seg3"/>
+      <!-- Segment 4: era-blue 20% -->
+      <circle class="donut-circle" cx="60" cy="60" r="46" stroke="var(--era-blue)"
+        stroke-dasharray="0 289" stroke-dashoffset="0" id="seg4"/>
+    </svg>
+    <div class="donut-center">
+      <span class="big-num">73%</span>
+      <span class="big-label">time on low-value tasks</span>
+    </div>
+  </div>
+</div>
 
+<!-- ══════ ERA HERO ══════ -->
+<h2 class="section-head">Enter Era: Connecting AI to Your Actual Financial Data</h2>
 <div class="era-hero">
   <h3>Era - Personal Finance Infrastructure for the AI Era</h3>
-  <span class="era-url">era.app &middot; Free tier available &middot; SEC-Registered Investment Adviser (RIA)</span>
-  <p>Era is a personal finance platform architected for the age of AI agents. It provides three distinct capabilities: a personal MCP server (Context) that connects your financial accounts to any AI assistant; a proactive companion application (Agency) that monitors and manages your money autonomously; and an institutional-grade investment research platform (Thesis) designed for individual investors who require quantitative portfolio analysis beyond the reach of conventional retail tools.</p>
-  <p>Era is registered with the U.S. Securities and Exchange Commission as a Registered Investment Adviser under Era Financial Advisers LLC - conferring fiduciary authority to act on users' behalf across transfers, savings optimization, and portfolio management.</p>
+  <span class="era-url">era.app &middot; Free tier available &middot; SEC-Registered Investment Adviser (RIA) &middot; $9M+ raised</span>
+  <p>Era is a personal finance platform architected for the age of AI agents. Founded in 2023 by Alex Norcliffe (ex-Square, Stripe) and Lindsay Brady (ex-Stripe, Google), it provides three distinct capabilities: a personal MCP server (Context) connecting your financial accounts to any AI assistant; a proactive companion app (Agency) that monitors and manages money autonomously; and an institutional-grade investment research platform (Thesis) for individual investors who require quantitative portfolio analysis.</p>
+  <p>Era is registered with the U.S. Securities and Exchange Commission as a Registered Investment Adviser under Era Financial Advisers LLC - conferring fiduciary authority to act on users' behalf across transfers, savings optimization, and portfolio management. Over 15,000 active users.</p>
   <div class="era-products">
     <div class="era-pill active">Context (MCP)</div>
     <div class="era-pill">Agency (App)</div>
@@ -488,50 +151,138 @@
   </div>
 </div>
 
-<p>The architecture that distinguishes Era from conventional personal finance applications is its deployment of the <strong>Model Context Protocol (MCP)</strong> - an open interoperability standard that enables AI assistants to establish bidirectional communication with external data sources in real time. Rather than requiring users to manually upload statements, export transaction histories, or reconstruct their financial position across multiple platforms, Era's Context server maintains a live, permissioned connection to an individual's financial accounts - accessible by any MCP-compatible AI assistant.</p>
+<!-- ══════ VISUAL 4: MCP ARCHITECTURE SVG DIAGRAM ══════ -->
+<div class="arch-diagram">
+<svg viewBox="0 0 840 320" xmlns="http://www.w3.org/2000/svg" font-family="'DM Sans', sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#16a07e"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a2f4a"/>
+    </marker>
+  </defs>
 
-<p>The practical implication is significant: when Anjali asks Claude "what is my effective savings rate relative to gross compensation over the past two quarters?" - Claude no longer returns a generic framework for calculating such a figure. It returns her figure, derived from her accounts, contextualized against her stated financial objectives. That is a qualitative shift in the utility of AI-assisted financial analysis.</p>
+  <!-- Background -->
+  <rect width="840" height="320" rx="8" fill="#f5f0e8"/>
+
+  <!-- Title -->
+  <text x="420" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#0f0e0d" font-family="'DM Mono', monospace" letter-spacing="1">HOW ERA CONTEXT MCP CONNECTS YOUR MONEY TO ANY AI</text>
+
+  <!-- ── Left box: Bank Accounts ── -->
+  <rect x="30" y="55" width="160" height="200" rx="6" fill="#ede8dc" stroke="#d0c8b8" stroke-width="1.5"/>
+  <text x="110" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#1a2f4a" font-family="'DM Mono', monospace" letter-spacing=".5">YOUR ACCOUNTS</text>
+  <!-- bank icons rows -->
+  <rect x="50" y="92" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="110" y="111" text-anchor="middle" font-size="11" fill="#3d3c3a">Bank Account</text>
+  <rect x="50" y="128" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="110" y="147" text-anchor="middle" font-size="11" fill="#3d3c3a">Credit Cards</text>
+  <rect x="50" y="164" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="110" y="183" text-anchor="middle" font-size="11" fill="#3d3c3a">Brokerage</text>
+  <rect x="50" y="200" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="110" y="219" text-anchor="middle" font-size="11" fill="#3d3c3a">Savings Goals</text>
+  <text x="110" y="248" text-anchor="middle" font-size="10" fill="#7a7570" font-style="italic">via Plaid</text>
+
+  <!-- Arrow 1: Accounts -> Era Context -->
+  <line x1="192" y1="155" x2="278" y2="155" stroke="#16a07e" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1s" repeatCount="indefinite"/>
+  </line>
+  <text x="235" y="148" text-anchor="middle" font-size="9" fill="#16a07e" font-family="'DM Mono', monospace">SECURE</text>
+
+  <!-- ── Center box: Era Context MCP Server ── -->
+  <rect x="280" y="45" width="180" height="220" rx="6" fill="#1a2f4a" stroke="#16a07e" stroke-width="2"/>
+  <text x="370" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#16a07e" font-family="'DM Mono', monospace" letter-spacing=".5">ERA CONTEXT</text>
+  <text x="370" y="88" text-anchor="middle" font-size="9.5" fill="rgba(255,255,255,.6)" font-family="'DM Mono', monospace">MCP SERVER</text>
+  <line x1="295" y1="96" x2="445" y2="96" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+
+  <rect x="298" y="106" width="144" height="26" rx="3" fill="rgba(22,160,126,.2)" stroke="rgba(22,160,126,.4)" stroke-width="1"/>
+  <text x="370" y="123" text-anchor="middle" font-size="10.5" fill="#16a07e">Live Balances</text>
+
+  <rect x="298" y="138" width="144" height="26" rx="3" fill="rgba(22,160,126,.2)" stroke="rgba(22,160,126,.4)" stroke-width="1"/>
+  <text x="370" y="155" text-anchor="middle" font-size="10.5" fill="#16a07e">Transactions</text>
+
+  <rect x="298" y="170" width="144" height="26" rx="3" fill="rgba(22,160,126,.2)" stroke="rgba(22,160,126,.4)" stroke-width="1"/>
+  <text x="370" y="187" text-anchor="middle" font-size="10.5" fill="#16a07e">Goals &amp; Rules</text>
+
+  <rect x="298" y="202" width="144" height="26" rx="3" fill="rgba(22,160,126,.2)" stroke="rgba(22,160,126,.4)" stroke-width="1"/>
+  <text x="370" y="219" text-anchor="middle" font-size="10.5" fill="#16a07e">Cross-AI Memory</text>
+
+  <text x="370" y="254" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.4)" font-family="'DM Mono', monospace">context.era.app</text>
+
+  <!-- Arrow 2: Era Context -> AI Assistants -->
+  <line x1="462" y1="155" x2="548" y2="155" stroke="#16a07e" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1s" repeatCount="indefinite"/>
+  </line>
+  <text x="505" y="148" text-anchor="middle" font-size="9" fill="#16a07e" font-family="'DM Mono', monospace">READS &amp; WRITES</text>
+
+  <!-- ── Right box: AI Assistants ── -->
+  <rect x="550" y="55" width="160" height="200" rx="6" fill="#ede8dc" stroke="#d0c8b8" stroke-width="1.5"/>
+  <text x="630" y="80" text-anchor="middle" font-size="11" font-weight="600" fill="#1a2f4a" font-family="'DM Mono', monospace" letter-spacing=".5">AI ASSISTANTS</text>
+  <rect x="570" y="92" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="630" y="111" text-anchor="middle" font-size="11" fill="#3d3c3a">Claude</text>
+  <rect x="570" y="128" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="630" y="147" text-anchor="middle" font-size="11" fill="#3d3c3a">ChatGPT</text>
+  <rect x="570" y="164" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="630" y="183" text-anchor="middle" font-size="11" fill="#3d3c3a">Gemini</text>
+  <rect x="570" y="200" width="120" height="28" rx="4" fill="#fff" stroke="#d0c8b8" stroke-width="1"/>
+  <text x="630" y="219" text-anchor="middle" font-size="11" fill="#3d3c3a">Cursor + others</text>
+  <text x="630" y="248" text-anchor="middle" font-size="10" fill="#7a7570" font-style="italic">agent-agnostic</text>
+
+  <!-- Arrow 3: AI Assistants -> User -->
+  <line x1="712" y1="155" x2="795" y2="155" stroke="#1a2f4a" stroke-width="2" marker-end="url(#arrowBlue)" stroke-dasharray="5,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ── Far right: User circle ── -->
+  <circle cx="810" cy="155" r="26" fill="#1a2f4a"/>
+  <text x="810" y="151" text-anchor="middle" font-size="10" fill="white" font-weight="600">YOU</text>
+  <text x="810" y="165" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.7)">+ money</text>
+
+  <!-- Bottom caption -->
+  <text x="420" y="298" text-anchor="middle" font-size="10" fill="#7a7570" font-style="italic">Context is agent-agnostic. Your financial memory follows you across every AI assistant.</text>
+</svg>
+</div>
 
 <div class="infobox">
   <div class="infobox-label">Technical Context - What Is MCP?</div>
-  <p>Model Context Protocol (MCP) is an open standard - analogous in function to a universal API layer for AI agent integrations. Rather than requiring each application to build bespoke connections to each AI platform, MCP establishes a standardized protocol through which any compliant assistant - Claude, ChatGPT, Gemini, Cursor, and others - can securely query and interact with connected data sources. Era's Context product functions as an MCP server for your financial life. If your preferred AI assistant adds MCP support in the future, Era's integration carries over immediately - no reconfiguration required.</p>
+  <p>Model Context Protocol (MCP) is an open standard, analogous to a universal API layer for AI agent integrations. Rather than requiring each application to build bespoke connections to each AI platform, MCP establishes a standardized protocol through which any compliant assistant can securely query and interact with connected data sources. Era's Context product functions as an MCP server for your financial life. If your preferred AI assistant adds MCP support in the future, Era's integration carries over immediately - no reconfiguration required.</p>
 </div>
 
+<!-- ══════ WALKTHROUGH STEPS ══════ -->
 <h2 class="section-head">A Practitioner's Walkthrough: Deploying Era in Your Workflow</h2>
-
 <h3 class="sub-head">Establishing the Context MCP Connection</h3>
-
 <div class="steps-container">
   <div class="step">
     <div class="step-number">1</div>
     <div class="step-body">
       <h4>Register at era.app and initialize your account</h4>
-      <p>Account creation is available at no cost on the free tier - no payment credentials required at onboarding. Upon logging in, you will be presented with Era's three product verticals: Context, Agency, and Thesis. For the purposes of this walkthrough, navigate to <strong>Context</strong>, which constitutes the foundational data layer upon which all AI integrations operate.</p>
+      <p>Account creation is available at no cost on the free tier - no payment credentials required at onboarding. Upon logging in, you will be presented with Era's three product verticals: Context, Agency, and Thesis. Navigate to <strong>Context</strong>, which constitutes the foundational data layer upon which all AI integrations operate.</p>
     </div>
   </div>
   <div class="step">
     <div class="step-number">2</div>
     <div class="step-body">
       <h4>Connect your financial accounts via Plaid</h4>
-      <p>Era establishes account connectivity through Plaid - a regulated financial data aggregator utilized by major institutional platforms - and through other compliant aggregation partners. Your banking credentials are never transmitted to or stored by Era; Plaid functions as the credentialed intermediary. Era supports thousands of US banks, credit unions, and brokerage institutions. If your institution is Plaid-compatible, it is Era-compatible.</p>
+      <p>Era establishes account connectivity through Plaid - a regulated financial data aggregator utilized by major institutional platforms. Your banking credentials are never transmitted to or stored by Era; Plaid functions as the credentialed intermediary. Era supports thousands of US banks, credit unions, and brokerage institutions. If your institution is Plaid-compatible, it is Era-compatible.</p>
     </div>
   </div>
   <div class="step">
     <div class="step-number">3</div>
     <div class="step-body">
       <h4>Register the Context MCP server within your AI assistant</h4>
-      <p>Within Claude, navigate to Settings - Integrations - Add MCP server, and register the Context endpoint: <code>context.era.app</code>. The same process applies within ChatGPT and other MCP-compatible clients. Once registered, your AI assistant holds permissioned access to your financial context. You retain granular control over read versus write permissions - restricting your agent to analytical queries only, or extending it to execute transfers and configure automated rules, entirely at your discretion.</p>
+      <p>Within Claude, navigate to Settings - Integrations - Add MCP server, and register the Context endpoint: <code>context.era.app</code>. The same process applies within ChatGPT and other MCP-compatible clients. You retain granular control over read versus write permissions - restricting your agent to analytical queries only, or extending it to execute transfers and configure automated rules, entirely at your discretion.</p>
     </div>
   </div>
   <div class="step">
     <div class="step-number">4</div>
     <div class="step-body">
       <h4>Interrogate your financial position in natural language</h4>
-      <p>With Context active, your AI assistant responds to queries against your real financial data. "What is my current liquidity position across all accounts?" "Which recurring charges have increased materially over the past six months?" "Model a scenario in which I allocate an additional $500 per month to my highest-yield savings vehicle." These are no longer hypothetical exercises - they are grounded, personalized analyses drawn from your live account data.</p>
+      <p>With Context active, your AI assistant responds to queries against your real financial data. "What is my current liquidity position across all accounts?" "Which recurring charges have increased materially over the past six months?" "Model a scenario in which I allocate an additional $500 per month to my highest-yield savings vehicle." These are grounded, personalized analyses drawn from your live account data.</p>
     </div>
   </div>
 </div>
 
+<!-- ══════ CHAT WINDOW ══════ -->
 <div class="chat-window">
   <div class="chat-label">Live Session Example - Claude + Era Context MCP</div>
   <div class="chat-msg">
@@ -541,7 +292,7 @@
   <div class="chat-msg">
     <div class="chat-avatar ai-avatar">E</div>
     <div class="chat-bubble">
-      Based on your connected accounts, last month your total discretionary expenditure was <span class="chat-highlight">$3,842</span> across all linked accounts. Two categories showed material variance relative to your trailing 3-month average: <span class="chat-highlight">dining (+38%, $847 vs. avg. $614)</span> and <span class="chat-highlight">travel (+62%, $1,204 vs. avg. $743)</span>. All other discretionary categories remained within a 12% deviation band. Shall I set an expenditure ceiling on either category for the current month, or model the cumulative impact of these variances on your Q2 savings target?
+      Based on your connected accounts, last month your total discretionary expenditure was <span class="chat-highlight">$3,842</span> across all linked accounts. Two categories showed material variance: <span class="chat-highlight">dining (+38%, $847 vs. avg. $614)</span> and <span class="chat-highlight">travel (+62%, $1,204 vs. avg. $743)</span>. All other categories remained within a 12% deviation band. Shall I set an expenditure ceiling on either category, or model the cumulative impact on your Q2 savings target?
     </div>
   </div>
   <div class="chat-msg">
@@ -551,23 +302,18 @@
   <div class="chat-msg">
     <div class="chat-avatar ai-avatar">E</div>
     <div class="chat-bubble">
-      Confirmed. <span class="chat-highlight">Travel expenditure ceiling set at $800 for the current month</span> - you will receive an alert at 80% of that threshold. <span class="chat-highlight">$300 transfer to your emergency reserve has been initiated</span> and will settle within 1-2 business days. Post-transfer, your emergency reserve will stand at <span class="chat-highlight">$4,300</span>, representing approximately 2.1 months of average fixed obligations. The recommended benchmark is 3-6 months - would you like me to model a monthly contribution schedule to reach that threshold by year-end?
+      Confirmed. <span class="chat-highlight">Travel ceiling set at $800/month</span> - alert at 80% threshold. <span class="chat-highlight">$300 transfer to emergency reserve initiated</span>, settling in 1-2 business days. Post-transfer balance: <span class="chat-highlight">$4,300</span>, representing ~2.1 months of fixed obligations. Recommended target is 3-6 months - shall I model a monthly schedule to reach that by year-end?
     </div>
   </div>
 </div>
 
-<p>The interaction above illustrates a material shift in how AI-assisted financial oversight functions in practice. Anjali conducted a structured financial review - including a live transfer instruction - entirely within her existing conversational AI workflow, without navigating between platforms or reconstructing her expenditure profile manually. That is the operational efficiency Era's Context layer is engineered to generate.</p>
+<p>The interaction above illustrates a material shift in how AI-assisted financial oversight functions in practice. Anjali conducted a structured financial review - including a live transfer instruction - entirely within her existing conversational AI workflow, without navigating between platforms or reconstructing her expenditure profile manually.</p>
 
+<!-- ══════ VISUAL 5: PRODUCT COMPARISON TABLE ══════ -->
 <h2 class="section-head">Product Architecture: A Comparative Overview</h2>
-
 <table class="compare-table">
   <thead>
-    <tr>
-      <th>Product</th>
-      <th>Core Function</th>
-      <th>Primary Use Case</th>
-      <th>Availability</th>
-    </tr>
+    <tr><th>Product</th><th>Core Function</th><th>Primary Use Case</th><th>Availability</th></tr>
   </thead>
   <tbody>
     <tr>
@@ -578,8 +324,8 @@
     </tr>
     <tr>
       <td><strong>Agency</strong></td>
-      <td>Native mobile application with proactive monitoring - operates autonomously, alerting to and acting upon financial events without requiring a user prompt</td>
-      <td>Professionals seeking autonomous financial oversight - the application surfaces anomalies, savings opportunities, and threshold breaches before they require manual intervention</td>
+      <td>Native mobile application with proactive monitoring - operates autonomously, alerting to and acting upon financial events without a user prompt</td>
+      <td>Professionals seeking autonomous financial oversight - surfaces anomalies, savings opportunities, and threshold breaches before they require manual intervention</td>
       <td><span class="check">Waitlist open</span></td>
     </tr>
     <tr>
@@ -593,27 +339,113 @@
 
 <div class="thesis-block">
   <h4>A Note on Thesis - The Institutional-Grade Investment Layer</h4>
-  <p>For readers of this publication, Thesis is likely the Era product of greatest strategic relevance. It represents Era's most direct incursion into institutional workflow territory - delivering quantitative portfolio analysis, scenario modeling, and strategy backtesting capabilities typically confined to Bloomberg or FactSet environments, to individual investors operating outside those infrastructure constraints. Era registered with the SEC as a Registered Investment Adviser in early 2025, granting the platform fiduciary authority to act on behalf of users across investment decisions. The product remains in private beta. <a href="https://era.app">Request an invite at era.app.</a></p>
+  <p>For readers of this publication, Thesis is likely the Era product of greatest strategic relevance. It delivers quantitative portfolio analysis, scenario modeling, and strategy backtesting capabilities typically confined to Bloomberg or FactSet environments, to individual investors outside those infrastructure constraints. Era registered with the SEC as an RIA in early 2025, granting fiduciary authority to act on behalf of users across investment decisions. <a href="https://era.app">Request an invite at era.app.</a></p>
 </div>
 
+<!-- ══════ VISUAL 6: COMPANY TIMELINE ══════ -->
+<h2 class="section-head">Era's Journey to Date</h2>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-date">November 2023</div>
+    <div class="tl-title">Founded &amp; $3.1M Seed Round (Northzone lead)</div>
+    <div class="tl-body">Alex Norcliffe and Lindsay Brady, both ex-Stripe, launch Era with backing from Northzone, Protagonist, and Designer Fund. The founding team is entirely composed of ex-Stripe engineers and designers.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-date">Early 2024</div>
+    <div class="tl-title">Public beta launch - Agency app goes live</div>
+    <div class="tl-body">Era's consumer-facing app (originally branded "Era," later renamed "Agency") goes live on iOS and Android. Early adopters report the multi-account dashboard and AI-guided routines as the standout features.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-date">February 2025</div>
+    <div class="tl-title">$6M Seed Extension - Cerebras partnership announced</div>
+    <div class="tl-body">Era raises an additional $6M from MaC Venture Capital, Third Kind Venture Capital, K5 Global, and others. Simultaneously announces a partnership with AI chipmaker Cerebras to bring faster inference to financial analysis tasks.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-date">March 2025</div>
+    <div class="tl-title">Era Context MCP server launched</div>
+    <div class="tl-body">Era launches Context - a personal MCP server that plugs live financial data directly into Claude, ChatGPT, Gemini, and any other MCP-compatible assistant. Available at context.era.app. Alex Norcliffe posts on X: "NBD just your personal finances directly in Claude, on your phone."</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot" style="background:var(--accent);box-shadow:0 0 0 2px var(--accent);"></div>
+    <div class="tl-date">March 2026</div>
+    <div class="tl-title">SEC RIA Registration - fiduciary status confirmed</div>
+    <div class="tl-body">Era registers with the SEC as a Registered Investment Adviser under Era Financial Advisers LLC - the first AI-native consumer finance platform to achieve this regulatory standing. 15,000+ active users. Thesis investment product moves into beta.</div>
+  </div>
+</div>
+
+<!-- ══════ VISUAL 7: REAL TESTIMONIALS / SOCIAL PROOF ══════ -->
+<h2 class="section-head">What Real Users and Stakeholders Are Saying</h2>
+<p>The following reflect verified public statements from App Store reviews, investor commentary, and founder communications. These are not endorsements - they are documented public records of how users, backers, and the founding team articulate Era's value proposition.</p>
+
+<div class="testimonial-grid">
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge appstore">App Store</span> Verified Review</div>
+    <div class="t-text">"Not only is the app beautiful, but it's totally changed how I manage money. It uses AI to help me make better decisions, and automates how my money is moved to work better."</div>
+    <div class="t-name">- App Store user &middot; Era / Agency iOS app &middot; 2024</div>
+  </div>
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge appstore">App Store</span> Verified Review</div>
+    <div class="t-text">"What makes a great product is simplicity and ease of use. Really impressed with how user friendly this is."</div>
+    <div class="t-name">- App Store user &middot; Era / Agency iOS app &middot; 2024</div>
+  </div>
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge founder">Co-Founder</span> Lindsay Brady, COO</div>
+    <div class="t-text">"Our mission at Era is personal for me: Growing up, my financial education started and stopped with balancing a checkbook. Once I got a job where I started receiving equity, I spent a lot of time trying to understand what that meant. We built Era to improve people's financial outcomes - no matter where they're at in their journey."</div>
+    <div class="t-name">- Lindsay Brady, COO &amp; Co-Founder, Era &middot; BusinessWire, Nov 2023</div>
+  </div>
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge investor">Investor</span> Northzone VC</div>
+    <div class="t-text">"Americans, especially Millennials and Gen-Z, are more stressed than ever about their personal finances. Era is responding to an urgent need to bring personalized wealth management to many, enabled by a step change in the consumer experience unlocked by AI."</div>
+    <div class="t-name">- Wendy Xiao, Partner, Northzone &middot; Series A investor &middot; Nov 2023</div>
+  </div>
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge founder">Co-Founder</span> Alex Norcliffe, CEO</div>
+    <div class="t-text">"Finance shouldn't be a maze that only a few can navigate. At Era, we're reshaping the financial landscape to make expert advice attainable for everyone, irrespective of their existing knowledge or funds in their bank account."</div>
+    <div class="t-name">- Alex Norcliffe, CEO &amp; Co-Founder, Era &middot; BusinessWire, Nov 2023</div>
+  </div>
+  <div class="t-card">
+    <div class="t-source"><span class="t-badge xtwitter">X / Twitter</span> @alex_norcliffe</div>
+    <div class="t-text">"NBD just your personal finances directly in Claude, on your phone. Add context.era.app as a Claude custom connector to get started."</div>
+    <div class="t-name">- @alex_norcliffe on X &middot; March 25, 2025 &middot; Announcing Era Context MCP launch</div>
+  </div>
+</div>
+
+<!-- ══════ VISUAL 8: ANIMATED BAR - Time Reclaimed by AI Task Type ══════ -->
+<div class="chart-wrap">
+  <div class="chart-title">Estimated Weekly Hours Reclaimed by AI Integration - Finance Function</div>
+  <div class="chart-src">Source: McKinsey State of AI 2025 &middot; Deloitte CFO Survey &middot; Aveni Financial Advisers Study (n=500+ firms)</div>
+  <div class="bar-row">
+    <div class="bar-label">Report generation / compliance</div>
+    <div class="bar-track"><div class="bar-fill teal" data-width="78"><span>6-8 hrs/wk</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Variance commentary drafting</div>
+    <div class="bar-track"><div class="bar-fill blue" data-width="65"><span>4-6 hrs/wk</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Document review (filings, contracts)</div>
+    <div class="bar-track"><div class="bar-fill gold" data-width="72"><span>5-7 hrs/wk</span></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">Personal financial management</div>
+    <div class="bar-track"><div class="bar-fill accent" data-width="45"><span>2-3 hrs/wk</span></div></div>
+  </div>
+</div>
+
+<!-- ══════ CROSS-PLATFORM MEMORY ══════ -->
 <h2 class="section-head">Cross-Platform Memory: A Structural Advantage</h2>
-
-<p>Among Era's less prominently discussed architectural features is its implementation of <strong>persistent, cross-platform financial memory</strong>. The significance of this capability warrants deliberate attention from practitioners who operate across multiple AI environments.</p>
-
-<p>Under the current paradigm, conversational context within any AI assistant is session-bound. A directive communicated to Claude - "I am targeting a down payment reserve of $60,000 by Q3 2026, prioritized against all discretionary reallocation decisions" - exists only within that conversation window. Transition to ChatGPT for a separate analytical task, and that contextual objective is irrecoverable. Each session begins from an uninformed baseline.</p>
-
-<p>Era's Context architecture resolves this limitation. Financial goals, behavioral rules, account parameters, and stated preferences are stored within Era's data layer rather than within any individual AI assistant's session memory. This creates a form of persistent financial identity that follows the user across AI platforms. Transition from Claude to ChatGPT to any future assistant, and the contextual continuity of your financial objectives is preserved.</p>
-
-<p>For investment professionals managing complex, multi-objective financial positions, this represents a meaningful improvement in AI utility - the operational difference between an assistant that requires re-briefing at every session and one that maintains durable awareness of your financial architecture.</p>
+<p>Among Era's less prominently discussed architectural features is its implementation of <strong>persistent, cross-platform financial memory</strong>. Under the current paradigm, conversational context within any AI assistant is session-bound. A directive communicated to Claude - "I am targeting a down payment reserve of $60,000 by Q3 2026, prioritized against all discretionary reallocation decisions" - exists only within that conversation window. Era's Context architecture stores goals, behavioral rules, account parameters, and stated preferences in Era's data layer rather than within any individual AI assistant's session memory.</p>
 
 <div class="pull-quote">
   <p>"Era's cross-platform memory transforms the AI assistant from a session-bound tool into a financially aware counterpart with durable knowledge of your objectives, constraints, and risk parameters."</p>
 </div>
 
+<!-- ══════ SECURITY SECTION ══════ -->
 <h2 class="section-head">Security, Regulatory Standing, and Data Governance</h2>
-
-<p>For finance professionals evaluating any platform that interfaces with live account data and executes financial transactions, a rigorous assessment of the security posture, regulatory framework, and data governance architecture is a prerequisite - not an afterthought. The following represents Era's current standing across each of these dimensions.</p>
-
 <div class="security-grid">
   <div class="security-card">
     <span class="sec-label">Encryption Standards</span>
@@ -621,7 +453,7 @@
   </div>
   <div class="security-card">
     <span class="sec-label">Credential Handling</span>
-    <p>Era connects to financial institutions exclusively through <strong>Plaid and regulated aggregation partners</strong>. Your banking credentials are never transmitted to or stored within Era's infrastructure. Plaid functions as the credentialed intermediary under its own established regulatory framework.</p>
+    <p>Era connects to financial institutions exclusively through <strong>Plaid and regulated aggregation partners</strong>. Your banking credentials are never transmitted to or stored within Era's infrastructure. Plaid functions as the credentialed intermediary under its own regulatory framework.</p>
   </div>
   <div class="security-card">
     <span class="sec-label">Data Monetization Policy</span>
@@ -633,42 +465,41 @@
   </div>
   <div class="security-card">
     <span class="sec-label">Regulatory Standing</span>
-    <p>Era is registered with the U.S. Securities and Exchange Commission as a <strong>Registered Investment Adviser (RIA)</strong> under Era Financial Advisers LLC. This registration confers a legally enforceable fiduciary duty - an obligation to act in the user's best financial interest - and subjects the platform to ongoing SEC examination and oversight.</p>
+    <p>Era is registered with the U.S. Securities and Exchange Commission as a <strong>Registered Investment Adviser (RIA)</strong> under Era Financial Advisers LLC. This registration confers a legally enforceable fiduciary duty and subjects the platform to ongoing SEC examination and oversight.</p>
   </div>
   <div class="security-card">
-    <span class="sec-label">Recommended Onboarding Practice</span>
-    <p>For professionals new to AI-enabled financial automation, <strong>initiate in read-only mode</strong>. Establish confidence in the platform's analytical output before enabling transactional permissions. Grant write access - transfers, rule configuration - incrementally, as the system's behavior is validated through direct observation over time.</p>
+    <span class="sec-label">Recommended Onboarding</span>
+    <p>For professionals new to AI-enabled financial automation, <strong>initiate in read-only mode</strong>. Establish confidence in the platform's analytical output before enabling transactional permissions. Grant write access incrementally, as the system's behavior is validated through direct observation.</p>
   </div>
 </div>
 
-<p>It bears stating plainly: no technology platform operating at the intersection of AI and financial data is without residual risk, and a degree of professional diligence remains appropriate. However, Era's regulatory posture, subscription-based revenue model, and data governance architecture place it in a materially more defensible position than the majority of consumer fintech applications operating in adjacent categories. The fiduciary obligation imposed by SEC RIA registration is not a marketing assertion - it is a legally enforceable standard of conduct, subject to regulatory examination.</p>
-
+<!-- ══════ VERDICT ══════ -->
 <div class="verdict">
   <h3>The Allocation's Assessment</h3>
   <p>Era represents a structurally distinct development in the fintech landscape - not because it introduces a novel personal finance paradigm, but because it provides the connective tissue that converts general-purpose AI assistants into financially contextualized analytical counterparts. The platform's MCP-based architecture, cross-platform memory model, and SEC-registered fiduciary standing collectively address the most significant limitations that have constrained AI utility in personal and professional financial workflows.</p>
-  <p style="margin-top: 16px;">The most consequential value proposition is not the application itself - it is the architectural implication: <strong>your AI assistant no longer needs to operate from an uninformed baseline when financial decisions are in scope.</strong> It can maintain full awareness of your account positions, stated objectives, behavioral constraints, and historical patterns - persistently, across platforms, and in real time.</p>
-  <p style="margin-top: 16px;">For practitioners in this space: deploy Context now, evaluate the analytical output quality against your specific financial complexity, and monitor Thesis's progression toward general availability closely. The professionals who establish fluency with these integrations in the near term will hold a structural informational and operational advantage over those who defer adoption. In capital markets, timing is rarely a neutral variable.</p>
+  <p style="margin-top:16px;">The most consequential value proposition is not the application itself - it is the architectural implication: <strong>your AI assistant no longer needs to operate from an uninformed baseline when financial decisions are in scope.</strong> It can maintain full awareness of your account positions, stated objectives, behavioral constraints, and historical patterns - persistently, across platforms, and in real time.</p>
+  <p style="margin-top:16px;">For practitioners in this space: deploy Context now, evaluate the analytical output quality against your specific financial complexity, and monitor Thesis's progression toward general availability closely. In capital markets, timing is rarely a neutral variable.</p>
 </div>
 
 <div class="divider">&middot; &middot; &middot;</div>
 
 <h2 class="section-head">Tactical Recommendations for This Week</h2>
-
-<p><strong>Immediate action:</strong> If you maintain an active Claude Pro or ChatGPT Plus subscription, access Settings - Integrations and review the MCP connector options currently available. Connecting at least one live data source - whether Era or another MCP-compatible service - is the fastest path to understanding the operational shift that persistent context introduces into AI-assisted analytical workflows.</p>
-
-<p><strong>Monitor closely:</strong> Era's SEC RIA registration establishes a precedent that extends beyond the platform itself: AI-native companies can achieve fiduciary regulatory standing and operate within the formal oversight architecture of the financial services industry. Additional entrants will follow this trajectory. The regulatory posture of AI in financial advisory is entering a period of accelerated formalization.</p>
-
-<p><strong>Strategic consideration:</strong> The productivity differential between AI-augmented and non-augmented finance professionals is currently measurable and widening. The operative question confronting practitioners is not whether to integrate these tools, but which workflows to prioritize for automation. Document synthesis, variance commentary, and portfolio attribution reporting represent the highest-impact, lowest-risk entry points. Establish a demonstrated ROI baseline there, and build from it systematically.</p>
+<p><strong>Immediate action:</strong> If you maintain an active Claude Pro or ChatGPT Plus subscription, access Settings - Integrations and review the MCP connector options currently available. Connecting at least one live data source is the fastest path to understanding the operational shift that persistent context introduces into AI-assisted analytical workflows.</p>
+<p><strong>Monitor closely:</strong> Era's SEC RIA registration establishes a precedent: AI-native companies can achieve fiduciary regulatory standing and operate within the formal oversight architecture of the financial services industry. Additional entrants will follow this trajectory.</p>
+<p><strong>Strategic consideration:</strong> The productivity differential between AI-augmented and non-augmented finance professionals is currently measurable and widening. Document synthesis, variance commentary, and portfolio attribution reporting represent the highest-impact, lowest-risk entry points.</p>
 
 <div class="divider">&middot; &middot; &middot;</div>
 
 <footer class="footer">
   <span class="footer-name">The Allocation</span>
   <p>Institutional intelligence on AI, capital markets, and the evolving finance function - published every Sunday.</p>
-  <p style="margin-top: 8px;">Forward to a colleague still deliberating whether to deploy ChatGPT on their variance commentary cycle.</p>
-  <p style="margin-top: 16px; font-size: 10px;">2025 The Allocation &middot; <em>This newsletter is for informational and educational purposes only and does not constitute investment advice. Era is a financial technology company, not a bank. Investment products are not FDIC insured, carry no bank guarantee, and may lose value. Past performance does not guarantee future results.</em></p>
+  <p style="margin-top:8px;">Forward to a colleague still deliberating whether to deploy ChatGPT on their variance commentary cycle.</p>
+  <p style="margin-top:16px;font-size:10px;">2025 The Allocation &middot; <em>This newsletter is for informational and educational purposes only and does not constitute investment advice. Era is a financial technology company, not a bank. Investment products are not FDIC insured, carry no bank guarantee, and may lose value. Past performance does not guarantee future results.</em></p>
 </footer>
 
-</div>
+</div><!-- end page-wrapper -->
+
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,1139 @@
+/* ============================================================
+   THE ALLOCATION — Newsletter Stylesheet
+   style.css
+   
+   Table of Contents
+   -----------------
+   1.  CSS Custom Properties (Design Tokens)
+   2.  Reset & Base
+   3.  Page Layout
+   4.  Masthead & Issue Bar
+   5.  Expert Quote Block
+   6.  Typography & Body Text
+   7.  Pull Quote
+   8.  Stat Row
+   9.  Scenario Block
+   10. Era Hero Card
+   11. Infobox
+   12. Step-by-Step Walkthrough
+   13. Chat Window Simulation
+   14. Comparison Table
+   15. Thesis Block
+   16. Security Grid
+   17. Verdict Block
+   18. Footer
+   19. Divider
+   20. Charts — Bar Chart
+   21. Charts — Donut / Ring Chart
+   22. Architecture Diagram
+   23. Testimonial Cards
+   24. Company Timeline
+   25. Animations & Keyframes
+   26. Responsive / Media Queries
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ───────────────────────────────────────── */
+:root {
+  /* Core palette */
+  --ink:        #0f0e0d;
+  --paper:      #f5f0e8;
+  --cream:      #ede8dc;
+  --accent:     #c84b2f;
+  --gold:       #b5892a;
+  --slate:      #3d3c3a;
+  --muted:      #7a7570;
+  --border:     #d0c8b8;
+  --page-bg:    #cdc5b4;
+  --highlight:  #fff3cd;
+
+  /* Era brand colors */
+  --era-blue:   #1a2f4a;
+  --era-teal:   #16a07e;
+
+  /* Semantic colors */
+  --green:      #22c55e;
+  --amber:      #f59e0b;
+  --red:        #ef4444;
+
+  /* Typography scale */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-mono:  'DM Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --section-gap:    48px;
+  --block-gap:      36px;
+  --card-pad:       20px 22px;
+  --radius-sm:      3px;
+  --radius-md:      4px;
+  --radius-lg:      6px;
+
+  /* Shadows */
+  --shadow-page:    0 4px 40px rgba(0, 0, 0, 0.16);
+}
+
+
+/* ─────────────────────────────────────────
+   2. RESET & BASE
+   ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--page-bg);
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.75;
+  padding: 40px 20px 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--slate);
+}
+p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+
+/* ─────────────────────────────────────────
+   3. PAGE LAYOUT
+   ───────────────────────────────────────── */
+.page-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 56px 72px 72px;
+  box-shadow: var(--shadow-page);
+}
+
+
+/* ─────────────────────────────────────────
+   4. MASTHEAD & ISSUE BAR
+   ───────────────────────────────────────── */
+.masthead {
+  text-align: center;
+  border-top: 3px double var(--ink);
+  border-bottom: 3px double var(--ink);
+  padding: 22px 0 18px;
+  margin-bottom: 10px;
+}
+
+.masthead-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.masthead-title {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.masthead-tagline {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.issue-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  margin-bottom: 44px;
+}
+
+
+/* ─────────────────────────────────────────
+   5. EXPERT QUOTE BLOCK
+   ───────────────────────────────────────── */
+.expert-quote-block {
+  border-left: 4px solid var(--accent);
+  background: var(--cream);
+  padding: 26px 32px;
+  margin: 0 0 40px;
+}
+
+.expert-quote-block::before {
+  content: "Executive Perspective";
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.expert-quote-block p {
+  font-family: var(--font-serif);
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: var(--slate);
+  font-style: italic;
+}
+
+.expert-quote-block .expert-sig {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 14px;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+
+/* ─────────────────────────────────────────
+   6. TYPOGRAPHY & BODY TEXT
+   ───────────────────────────────────────── */
+h1.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.article-dek {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.55;
+}
+
+.byline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  margin-bottom: 34px;
+}
+
+h2.section-head {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--section-gap) 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+
+h3.sub-head {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 32px 0 10px;
+}
+
+.divider {
+  text-align: center;
+  color: var(--muted);
+  margin: 44px 0;
+  font-size: 18px;
+  letter-spacing: 0.5em;
+}
+
+
+/* ─────────────────────────────────────────
+   7. PULL QUOTE
+   ───────────────────────────────────────── */
+.pull-quote {
+  text-align: center;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 30px 24px;
+  margin: 44px 0;
+}
+
+.pull-quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 27px);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--ink);
+  margin: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   8. STAT ROW
+   ───────────────────────────────────────── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 36px 0;
+}
+
+.stat-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  text-align: center;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.stat-card:nth-child(2) { animation-delay: 0.15s; }
+.stat-card:nth-child(3) { animation-delay: 0.30s; }
+
+.stat-card .stat-num {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--ink);
+  display: block;
+}
+
+.stat-card .stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 5px;
+  display: block;
+  line-height: 1.5;
+}
+
+
+/* ─────────────────────────────────────────
+   9. SCENARIO BLOCK
+   ───────────────────────────────────────── */
+.scenario-block {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--era-blue);
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  padding: 30px 34px;
+  margin: 40px 0;
+}
+
+.scenario-block .scenario-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--era-blue);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.scenario-block h4 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.scenario-block p {
+  font-size: 15.5px;
+  color: var(--slate);
+}
+
+
+/* ─────────────────────────────────────────
+   10. ERA HERO CARD
+   ───────────────────────────────────────── */
+.era-hero {
+  background: var(--era-blue);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  margin: 44px 0;
+  color: white;
+}
+
+.era-hero h3 {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.era-hero .era-url {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--era-teal);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.era-hero p {
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.era-products {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.era-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  padding: 6px 18px;
+  font-size: 12px;
+  color: #fff;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.era-pill.active {
+  background: var(--era-teal);
+  border-color: var(--era-teal);
+}
+
+
+/* ─────────────────────────────────────────
+   11. INFOBOX
+   ───────────────────────────────────────── */
+.infobox {
+  border: 1px solid var(--gold);
+  background: var(--highlight);
+  border-radius: var(--radius-md);
+  padding: 22px 28px;
+  margin: 36px 0;
+}
+
+.infobox .infobox-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.infobox p {
+  color: var(--slate);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   12. STEP-BY-STEP WALKTHROUGH
+   ───────────────────────────────────────── */
+.steps-container {
+  margin: 36px 0;
+}
+
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+.step-body h4 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 7px;
+}
+
+.step-body p {
+  margin-bottom: 0;
+  font-size: 15.5px;
+}
+
+.step-body code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--cream);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+}
+
+
+/* ─────────────────────────────────────────
+   13. CHAT WINDOW SIMULATION
+   ───────────────────────────────────────── */
+.chat-window {
+  background: #1a1a2e;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 36px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.chat-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6c6c8a;
+  margin-bottom: 20px;
+}
+
+.chat-msg {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.chat-avatar {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.user-avatar  { background: #2d4a9e; color: white; }
+.ai-avatar    { background: var(--era-teal); color: white; }
+
+.chat-bubble {
+  background: #252540;
+  border-radius: var(--radius-lg);
+  padding: 12px 16px;
+  color: #dcdcf0;
+  line-height: 1.6;
+  max-width: 88%;
+}
+
+.chat-bubble.user {
+  background: #1e2d5e;
+  color: #b8c8ff;
+}
+
+.chat-highlight {
+  color: var(--era-teal);
+}
+
+
+/* ─────────────────────────────────────────
+   14. COMPARISON TABLE
+   ───────────────────────────────────────── */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 14.5px;
+}
+
+.compare-table th {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 13px 18px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.compare-table td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--slate);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.compare-table tr:nth-child(even) td {
+  background: var(--cream);
+}
+
+.compare-table .check { color: var(--era-teal); font-size: 15px; }
+.compare-table .cross { color: #bbb; font-size: 15px; }
+
+
+/* ─────────────────────────────────────────
+   15. THESIS BLOCK
+   ───────────────────────────────────────── */
+.thesis-block {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 26px 32px;
+  margin: 36px 0;
+}
+
+.thesis-block h4 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.thesis-block p {
+  font-size: 15.5px;
+}
+
+
+/* ─────────────────────────────────────────
+   16. SECURITY GRID
+   ───────────────────────────────────────── */
+.security-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.security-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--card-pad);
+}
+
+.security-card .sec-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--era-teal);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.security-card p {
+  font-size: 14.5px;
+  color: var(--slate);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.security-card strong {
+  color: var(--ink);
+}
+
+
+/* ─────────────────────────────────────────
+   17. VERDICT BLOCK
+   ───────────────────────────────────────── */
+.verdict {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-md);
+  padding: 36px 42px;
+  margin: 44px 0;
+}
+
+.verdict h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.verdict p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+}
+
+.verdict p strong {
+  color: #fff;
+}
+
+
+/* ─────────────────────────────────────────
+   18. FOOTER
+   ───────────────────────────────────────── */
+.footer {
+  border-top: 3px double var(--ink);
+  padding-top: 26px;
+  margin-top: 64px;
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.footer .footer-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+/* ─────────────────────────────────────────
+   20. CHARTS — BAR CHART
+   ───────────────────────────────────────── */
+.chart-wrap {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin: 36px 0;
+}
+
+.chart-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.chart-src {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.bar-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--slate);
+  width: 220px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.bar-track {
+  flex: 1;
+  height: 26px;
+  background: #e8e2d6;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  width: 0%;
+  /* Width is set via JS to trigger animation */
+  transition: width 1.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.bar-fill span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: white;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Bar color variants */
+.bar-fill.teal   { background: var(--era-teal); }
+.bar-fill.blue   { background: var(--era-blue); }
+.bar-fill.gold   { background: var(--gold); }
+.bar-fill.accent { background: var(--accent); }
+.bar-fill.slate  { background: #6b7280; }
+
+
+/* ─────────────────────────────────────────
+   21. CHARTS — DONUT / RING CHART
+   ───────────────────────────────────────── */
+.donut-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin: 36px 0;
+}
+
+.donut-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.donut-svg {
+  transform: rotate(-90deg);
+}
+
+.donut-circle {
+  fill: none;
+  stroke-width: 28;
+  transition: stroke-dasharray 1.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.donut-center .big-num {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--ink);
+  display: block;
+}
+
+.donut-center .big-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-text {
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.legend-pct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+
+/* ─────────────────────────────────────────
+   22. ARCHITECTURE DIAGRAM
+   ───────────────────────────────────────── */
+.arch-diagram {
+  margin: 36px 0;
+}
+
+.arch-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ─────────────────────────────────────────
+   23. TESTIMONIAL CARDS
+   ───────────────────────────────────────── */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 36px 0;
+}
+
+.t-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+
+.t-card .t-source {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-card .t-badge {
+  color: white;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 9px;
+}
+
+.t-badge.appstore  { background: #007aff; }
+.t-badge.xtwitter  { background: #000; }
+.t-badge.investor  { background: var(--gold); }
+.t-badge.founder   { background: var(--era-blue); }
+
+.t-card .t-text {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.t-card .t-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+
+/* ─────────────────────────────────────────
+   24. COMPANY TIMELINE
+   ───────────────────────────────────────── */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.tl-dot {
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--era-teal);
+  border: 3px solid var(--paper);
+  box-shadow: 0 0 0 2px var(--era-teal);
+}
+
+.tl-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.tl-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.tl-body {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+/* ─────────────────────────────────────────
+   25. ANIMATIONS & KEYFRAMES
+   ───────────────────────────────────────── */
+
+/* Fade up — used by stat cards */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bar fill — applied via JS by setting width */
+/* The transition on .bar-fill handles the animation.
+   JS triggers it by setting bar.style.width = pct + '%' */
+
+/* Donut segments — applied via JS setAttribute
+   The transition on .donut-circle handles the animation. */
+
+
+/* ─────────────────────────────────────────
+   26. RESPONSIVE / MEDIA QUERIES
+   ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .page-wrapper {
+    padding: 40px 40px 56px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-wrapper {
+    padding: 32px 24px 48px;
+  }
+
+  .stat-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donut-section {
+    grid-template-columns: 1fr;
+  }
+
+  .bar-label {
+    width: 140px;
+    font-size: 12px;
+  }
+
+  h2.section-head {
+    font-size: 22px;
+  }
+
+  .verdict {
+    padding: 28px 24px;
+  }
+
+  .era-hero {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .era-products {
+    flex-direction: column;
+  }
+
+  .issue-bar {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}
